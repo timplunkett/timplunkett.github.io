@@ -13,16 +13,16 @@ For a primer on the basic usage of `git bisect`, please read [webchick's excelle
 
 Due to sheer enthusiasm, no one noticed that the tests hadn't finished running, and a release was committed. When the dust settled, several people [reported a bug](https://www.drupal.org/node/2874489) in the UI.
 
-We had entered the day with a working release, **Panels 8.x-4.x-beta1**. There had only been a few commits between the beta and the stable release, and I could have tracked down the bug manually. Instead I reached for `git bisect`, because what's the point of knowing a tool if you never use it?!
+The day began with a working release, **Panels 8.x-4.x-beta1**. There had only been a few commits between the beta and the stable release, and I could have tracked down the bug manually. Instead I reached for `git bisect`, because what's the point of knowing a tool if you never use it?!
 
 ## First attempt
 
 ```bash
 git bisect start 8.x-4.0 8.x-4.0-beta1
 ```
-After telling bisect the *bad* commit and the most recent known *good* commit, git will begin to step through each intermediate commit. At each step you must indicate if the current commit is good or bad, and how you do that up to you to decide.
+After telling bisect the *bad* commit and the most recent known *good* commit, git will begin to step through each intermediate commit. At each step you must determine if the current commit is good or bad.
 
-In this case we had a specific test that was failing, the `testLayoutSettings()` method in the `Drupal\panels\Tests\PanelsTest` class.
+In this case there was a specific test that was failing, the `testLayoutSettings()` method in the `Drupal\panels\Tests\PanelsTest` class.
 
 I could have run this test through the graphical runner, but instead chose to use the `run-tests.sh` script that ships with Drupal core:
 ```bash
@@ -65,7 +65,7 @@ git bisect start $1 $2
 git bisect run php $SITE_DIR/core/scripts/run-tests.sh
   --url $SITE_URL --class $3
 ```
-By creating this file, naming it `git-bisect-test`, and putting somewhere in my `$PATH`, I can now use a single command:
+By creating this file, naming it `git-bisect-test`, and putting somewhere in my `$PATH`, you now use a single command:
 ```bash
 git bisect-test 8.x-4.0 8.x-4.0-beta1 "Drupal\panels\Tests\PanelsTest::testLayoutSettings"
 ```
