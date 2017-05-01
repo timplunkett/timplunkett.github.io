@@ -65,7 +65,7 @@ git bisect start $1 $2
 git bisect run php $SITE_DIR/core/scripts/run-tests.sh
   --url $SITE_URL --class $3
 ```
-By creating this file, naming it `git-bisect-test`, and putting somewhere in my `$PATH`, you now use a single command:
+By creating this file, naming it `git-bisect-test`, and putting somewhere in your `$PATH`, you now use a single command:
 ```bash
 git bisect-test 8.x-4.0 8.x-4.0-beta1 "Drupal\panels\Tests\PanelsTest::testLayoutSettings"
 ```
