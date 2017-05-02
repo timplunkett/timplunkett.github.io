@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Using `git bisect run` with Drupal"
-date:   2017-05-02 13:00:00 -0400
+date:   2017-05-02 10:45:00 -0400
 ---
 For a primer on the basic usage of `git bisect`, please read [webchick's excellent post](http://webchick.net/node/99) from several years ago. That post was my first introduction to using this helpful command.
 
