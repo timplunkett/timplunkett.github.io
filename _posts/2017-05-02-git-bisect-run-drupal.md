@@ -39,7 +39,7 @@ Based on the output of this script, you then can run `git bisect good` or `git b
 
 Why do something manually if you can automate it?
 
-Bisect supports a `run` subcommand, allowing you to pass any script for it to run on each step. The script should return 0 or 1 to indicate bad or good commits. Thankfully, `run-tests.sh` uses the correct exit codes!
+Bisect supports a `run` subcommand, allowing you to pass any script for it to run on each step. The script should return 0 or 1 to indicate bad or good commits. Thanks to the work [done here](https://www.drupal.org/commitlog/commit/2/37705f2a8220776d86d333597a24cb40116981f5), `run-tests.sh` uses the correct exit codes!
 ```bash
 git bisect start 8.x-4.0 8.x-4.0-beta1
 git bisect run php ../../core/scripts/run-tests.sh
