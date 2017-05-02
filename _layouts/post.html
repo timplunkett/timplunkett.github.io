@@ -16,3 +16,8 @@ layout: default
     {% include disqus_comments.html %}
   {% endif %}
 </article>
+
+{% unless site.disqus.shortname %}
+<hr><br>
+<div>Comments are not set up yet. Feel free to <a href="https://twitter.com/{{ site.twitter_username }}">reply to me here</a>.</div>
+{% endunless %}
