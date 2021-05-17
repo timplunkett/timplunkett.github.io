@@ -12,4 +12,6 @@ Thankfully the [Drupal.org API](https://www.drupal.org/drupalorg/docs/apis/rest-
 
 <script src="https://gist.github.com/timplunkett/9b66e6fcd6d07f767c0a3e8167166e29.js"></script>
 
+Note that the script requires [jq](https://stedolan.github.io/jq/).
+
 Any feedback on my functional but unpolished shell scripting skills is welcome.
